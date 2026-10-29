@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rafi Al Karim Researcher</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js for Impact Visualizer -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#07080E',
+                            card: 'rgba(15, 18, 30, 0.65)',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            violet: '#6366f1',
+                            cyan: '#06b6d4',
+                            gold: '#fbbf24',
+                            accent: '#818cf8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="relative text-slate-300 selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background Canvas for Connected Neural Particles -->
+    <canvas id="neuralCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-40"></canvas>
+
+    <!-- Background Glow Elements -->
+    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full ambient-glow-1 pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full ambient-glow-2 pointer-events-none z-0"></div>
+
+    <!-- MAIN CONTAINER -->
+    <div id="home" class="relative z-10 flex flex-col min-h-screen">
+
+        <!-- HEADER / NAVIGATION -->
+        <header class="sticky top-0 z-50 glass-panel border-b border-white/5 px-6 lg:px-12 py-4 transition-all duration-300">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Branding / Credentials -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full overflow-hidden bg-slate-900 border border-white/10 flex items-center justify-center group">
+                        <img src="./compressed-portfolio.jpg" alt="Profile Logo" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div>
+                        <span class="block font-serif text-lg font-bold tracking-wide text-white group-hover:text-indigo-300 transition">Md Rafi Al KArim</span>
+                        <span class="block text-xs text-slate-400 tracking-wider uppercase font-mono">BSC Graduated</span>
+                    </div>
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                    <a href="#education" class="hover:text-indigo-400 transition">Education</a>
+                    <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                    <a href="#certifications" class="hover:text-indigo-400 transition">Certifications</a>
+                    <a href="#publications" class="hover:text-indigo-400 transition">Publications</a>
+                    <a href="#impact" class="hover:text-indigo-400 transition">Academic Impact</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="https://drive.google.com/file/d/1kn_-rBpxwtrXFiWBYUZDf6mwwhaiZ64z/view?usp=drive_link" target="_blank" id="downloadCvBtn" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-indigo-300 bg-indigo-500/10 border border-indigo-500/30 rounded-lg hover:bg-indigo-500/20 hover:border-indigo-400 transition cursor-pointer">
+                    <i class="fa-solid fa-file-pdf"></i> CV / Resume
+                    </a>
+                    <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-black bg-gradient-to-r from-indigo-400 to-cyan-300 rounded-lg shadow-lg shadow-indigo-500/20 hover:brightness-110 transition">
+                        Collaborate
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="relative pt-9 pb-20 px-6 lg:px-10 max-w-7xl mx-auto w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Bio Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel text-xs text-indigo-300 font-mono border-indigo-500/20">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Postgraduate Researcher @ Daffodil International University
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gradient">
+                        Decoding Neural Architectures Through Machine Learning.
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        I bridge theoretical computational neuroscience with variational quantum machine learning algorithms. My focus lies in decoding high-dimensional cortical neural activity and deploying bio-inspired deep architectures.
+                    </p>
+
+                    <!-- ORCID & Scholar Quick Links -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="https://orcid.org/my-orcid?orcid=0009-0008-5797-1998" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono bg-slate-800/80 hover:bg-slate-700/80 text-emerald-400 px-3 py-1.5 rounded-md border border-emerald-500/20 transition">
+                            <i class="fa-brands fa-orcid text-sm"></i> ORCID: 0009-0008-5797-1998
+                        </a>
+                        <a href="https://scholar.google.com/" class="inline-flex items-center gap-2 text-xs font-mono bg-slate-800/80 hover:bg-slate-700/80 text-cyan-400 px-3 py-1.5 rounded-md border border-cyan-500/20 transition">
+                            <i class="fa-solid fa-graduation-cap text-sm"></i> Google Scholar Profile
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Md-Al-Karim?ev=hdr_xprf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono bg-slate-800/80 hover:bg-slate-700/80 text-teal-400 px-3 py-1.5 rounded-md border border-teal-500/20 transition">
+                            <i class="fa-brands fa-researchgate text-sm"></i> ResearchGate
+                        </a>
+                    </div>
+
+                    <!-- Metrics Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
+                        <div class="glass-card p-4 rounded-xl border border-white/5">
+                            <div class="text-3xl font-bold text-white font-serif">6</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Total Publications</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-white/5">
+                            <div class="text-3xl font-bold text-indigo-400 font-serif">25</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Total Citations</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-white/5">
+                            <div class="text-3xl font-bold text-cyan-400 font-serif">6</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">h-index</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl border border-white/5">
+                            <div class="text-3xl font-bold text-emerald-400 font-serif">2</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Projects Led</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Researcher Card Frame -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
+                        
+                        <div class="relative glass-panel rounded-2xl p-6 overflow-hidden border border-white/10 space-y-6">
+                            <div class="relative h-  rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center border border-white/10 mx-auto">
+                                <img src="portfolio.png" alt="Rafi" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-3 left-4 right-4 text-xs font-mono bg-black/60 backdrop-blur-md p-2 rounded border border-white/10 flex justify-between">
+                                    <span class="text-slate-300"></span>
+                                    <span class="text-indigo-300">Daffodil University</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Primary Appointments</h4>
+                                <ul class="space-y-2 text-xs">
+                                    <li class="flex items-start gap-2 text-slate-300">
+                                        <i class="fa-solid fa-building-columns text-indigo-400 mt-0.5"></i>
+                                        <span>Postdoctoral Fellow, Department of Neurobiology, Stanford University</span>
+                                    </li>
+                                    <li class="flex items-start gap-2 text-slate-300">
+                                        <i class="fa-solid fa-atom text-cyan-400 mt-0.5"></i>
+                                        <span>Visiting Scholar, Max Planck Institute for Biological Cybernetics</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="py-16 px-6 lg:px-12 max-w-7xl mx-auto w-full border-t border-white/5">
+            <div class="mb-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Academic Background</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Education & Academic Training</h2>
+            </div>
+
+            <div class="relative border-l border-indigo-500/30 ml-4 lg:ml-6 space-y-10 pl-6 lg:pl-10">
+                <!-- BSc -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] lg:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-brand-dark border-2 border-indigo-500 flex items-center justify-center group-hover:scale-110 transition duration-300">
+                        <div class="w-2 h-2 rounded-full bg-indigo-400"></div>
+                    </div>
+
+                    <div class="glass-card p-6 lg:p-8 rounded-2xl border border-white/5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 w-fit">
+                                2021 — 2026
+                            </span>
+                            <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-indigo-400"></i> Birulia, Savar, Dhaka-1216
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-serif font-bold text-white mb-1">
+                            B.Sc. in Computer Science and Engineering
+                        </h3>
+                        <p class="text-sm font-mono text-indigo-300 mb-4">
+                            Daffodil International University
+                        </p>
+
+                        <div class="space-y-2 text-xs text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            <p>
+                                <strong class="text-slate-200">Thesis:</strong> A Lightweight CNN-Model for High-Risk Mushroom Species Classification (Edible vs. Toxic)
+                            </p>
+                            <p>
+                                <strong class="text-slate-200">Supervisor:</strong> Md Mahedi Hassan
+                            </p>
+                            <p>
+                                <strong class="text-slate-200">Co-Supervisor:</strong>Ms Sharun Akter Khushbu
+                            </p>
+                            <p class="text-slate-400">
+                                Specialized in lightweight CNN model classifies dangerous mushroom species into edible and toxic categories, utilizing custom architectures (LightMushNet), Explainable AI (Grad-CAM), and also A web application was developed. Multimodal data such as environmental conditions and image inputs to facilitate more comprehensive and context-aware decision support.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Higher Secondary Certificate -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] lg:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-brand-dark border-2 border-cyan-500 flex items-center justify-center group-hover:scale-110 transition duration-300">
+                        <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
+                    </div>
+
+                    <div class="glass-card p-6 lg:p-8 rounded-2xl border border-white/5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 w-fit">
+                                2018 — 2020
+                            </span>
+                            <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-cyan-400"></i> Bogura Cantonment, Majhira, Bogura-5800
+                            </span>
+                            
+                        </div>
+
+                        <h3 class="text-xl font-serif font-bold text-white mb-1">
+                            Higher Secondary Certificate
+                        </h3>
+                        <p class="text-sm font-mono text-cyan-300 mb-4">
+                            Bogura Cantonment Public School and College
+                        </p>
+                        <div class="space-y-2 text-xs text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            <p>
+                                <strong class="text-slate-200">Department:</strong> Science
+                            </p>
+                            <p>
+                                <strong class="text-slate-200">Result:</strong> GPA- 5.00
+                            </p>
+                            <p class="text-slate-400">
+                                Proven student leader and science fair awardee (3rd Place, College Science Fair) with a strong history of driving campus engagement. Experienced in serving as College Captain, managing event operations as a dedicated volunteer, and participating in cultural activities—demonstrating adaptability, team management, and creative expression.
+                            </p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <!-- SSC -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] lg:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-brand-dark border-2 border-emerald-500 flex items-center justify-center group-hover:scale-110 transition duration-300">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                    </div>
+
+                    <div class="glass-card p-6 lg:p-8 rounded-2xl border border-white/5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 w-fit">
+                                2016 — 2018
+                            </span>
+                            <span class="text-xs font-mono text-slate-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-emerald-400"></i> Bogura Cantonment, Majhira, Bogura-5800
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-serif font-bold text-white mb-1">
+                            Secondary School Certificate
+                        </h3>
+                        <p class="text-sm font-mono text-emerald-300 mb-4">
+                            Bogura Cantonment Public School and College
+                        </p>
+
+                        <div class="space-y-2 text-xs text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            <p>
+                                <strong class="text-slate-200">Department:</strong> Science
+                            </p>
+                            <p>
+                                <strong class="text-slate-200">Result:</strong> GPA- 5.00
+                            </p>
+                            <p class="text-slate-400">
+                                A former School Captain with proven leadership, communications, and volunteer in event-coordination. Demonstrated strong discipline, athletic adaptability, and high-performance teamwork by securing runner-up titles across multiple inter-school sports competitions (Cricket, Football, Basketball) and advancing as an inter-cantonment cricket semi-finalist.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-16 px-6 lg:px-12 max-w-7xl mx-auto w-full border-t border-white/5">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Technical Competencies</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Skills & Core Methodologies</h2>
+                </div>
+
+                <!-- Skill Filter Badges -->
+                <div class="flex flex-wrap items-center gap-2" id="skillFilterBadges">
+                    <button data-filter="all" class="skill-filter-btn active-filter px-3.5 py-1.5 rounded-full text-xs font-mono transition">All Skills</button>
+                    <button data-filter="ai" class="skill-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono transition">AI & Math</button>
+                    <button data-filter="experimental" class="skill-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono transition">Lab Techniques</button>
+                    <button data-filter="software" class="skill-filter-btn px-3.5 py-1.5 rounded-full text-xs font-mono transition">Software & Tools</button>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="skillsGrid">
+
+                <!-- Skill Group 1 -->
+                <div class="skill-card glass-card p-6 rounded-2xl border border-white/5" data-category="ai">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-lg">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white">Quantum & Deep Learning</h3>
+                            <span class="text-[10px] font-mono text-indigo-300">Algorithmic Modeling</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>PyTorch & Qiskit / PennyLane</span>
+                                <span class="text-indigo-400">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-full" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Variational Quantum Circuits</span>
+                                <span class="text-indigo-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Spiking Neural Networks</span>
+                                <span class="text-indigo-400">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-full" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Group 2 -->
+                <div class="skill-card glass-card p-6 rounded-2xl border border-white/5" data-category="experimental">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg">
+                            <i class="fa-solid fa-wave-square"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white">Electrophysiology & BCI</h3>
+                            <span class="text-[10px] font-mono text-cyan-300">Signal Acquisition</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Invasive ECoG & Micro-arrays</span>
+                                <span class="text-cyan-400">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyan-500 to-emerald-400 h-full" style="width: 92%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Real-time Spike Sorting</span>
+                                <span class="text-cyan-400">94%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyan-500 to-emerald-400 h-full" style="width: 94%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Optogenetics & Imaging</span>
+                                <span class="text-cyan-400">82%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyan-500 to-emerald-400 h-full" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Group 3 -->
+                <div class="skill-card glass-card p-6 rounded-2xl border border-white/5" data-category="ai">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg">
+                            <i class="fa-solid fa-shapes"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white">Mathematics & Topology</h3>
+                            <span class="text-[10px] font-mono text-amber-300">Analytical Foundations</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-xs">
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Topological Data Analysis</span>
+                                <span class="text-amber-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-500 to-amber-300 h-full" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono mb-1 text-slate-300">
+                                <span>Riemannian Geometry</span>
+                                <span class="text-amber-400">86%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-amber-500 to-amber-300 h-full" style="width: 86%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Group 4 -->
+                <div class="skill-card glass-card p-6 rounded-2xl border border-white/5" data-category="software">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white">Software & HPC Infrastructure</h3>
+                            <span class="text-[10px] font-mono text-purple-300">Engineering</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-purple-300 border border-purple-500/20 font-mono">C++20 / CUDA</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-purple-300 border border-purple-500/20 font-mono">Python (NumPy/SciPy)</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-purple-300 border border-purple-500/20 font-mono">Julia</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-purple-300 border border-purple-500/20 font-mono">SLURM / Docker</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 5 -->
+                <div class="skill-card glass-card p-6 rounded-2xl border border-white/5" data-category="experimental">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif font-bold text-white">Laboratory Standards</h3>
+                            <span class="text-[10px] font-mono text-emerald-300">Compliance & Ethics</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-emerald-300 border border-emerald-500/20 font-mono">IACUC Protocol Design</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-emerald-300 border border-emerald-500/20 font-mono">BSL-2 Safety</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-emerald-300 border border-emerald-500/20 font-mono">Human IRB Protocols</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-800/80 text-emerald-300 border border-emerald-500/20 font-mono">Clinical Trial Data Integrity</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="py-16 px-6 lg:px-12 max-w-7xl mx-auto w-full border-t border-white/5">
+            <div class="mb-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Professional Qualifications</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Certifications & Honors</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Clickable Certification Card 1 -->
+                <a href="https://www.hackerrank.com/certificates/iframe/f923933a1428" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-emerald-400">HackerRank</span>
+                        <span class="text-xs font-mono text-slate-500">2025</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">Python(Basic)</h3>
+                    <p class="text-xs text-slate-400">This certificate validates fundamental Python programming, basic algorithms, and data structures.</p>
+                </a>
+
+                <!-- Clickable Certification Card 2 -->
+                <a href="https://www.hackerrank.com/certificates/iframe/f7df666b86c5" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-emerald-400">HackerRank</span>
+                        <span class="text-xs font-mono text-slate-500">2025</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">SQL(Basic)</h3>
+                    <p class="text-xs text-slate-400">Validates foundational database querying, filtering, table joins, and essential SQL commands.</p>
+                </a>
+
+                <!-- Clickable Certification Card 3 -->
+                <a href="https://www.hackerrank.com/certificates/iframe/564f93c8ea07" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-emerald-400">HackerRank</span>
+                        <span class="text-xs font-mono text-slate-500">2025</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">R(Basic)</h3>
+                    <p class="text-xs text-slate-400">Validates foundational data manipulation, vectors, data frames, and essential R functions.</p>
+                </a>
+                <a href="https://www.netacad.com/certificates/?issuanceId=9e2cabd3-cdf1-4fb6-84a5-ac0369166322" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-cyan-400">Cisco Networking Academy</span>
+                        <span class="text-xs font-mono text-slate-500">2025</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">Introduction to Data Science</h3>
+                    <p class="text-xs text-slate-400">Validates foundational data science concepts, analysis, and core data visualization methods.</p>
+                </a>
+                <a href="https://www.netacad.com/certificates/?issuanceId=9e2cabd3-cdf1-4fb6-84a5-ac0369166322" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-cyan-400">Cisco Networking Academy</span>
+                        <span class="text-xs font-mono text-slate-500">2026</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">Introduction to Modern AI</h3>
+                    <p class="text-xs text-slate-400">Validates foundational artificial intelligence concepts, machine learning basics, and modern applications.</p>
+                </a>
+                <a href="https://www.grameenphone.academy/cert/30e3cdf4671c" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-indigo-400">Grameenphone Academy</span>
+                        <span class="text-xs font-mono text-slate-500">2026</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">GenAI and Prompt Engineering</h3>
+                    <p class="text-xs text-slate-400">Validates foundational generative AI concepts, prompt engineering techniques, and practical applications.</p>
+                </a>
+                <a href="https://www.grameenphone.academy/cert/562c2f615a56" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-indigo-400">Grameenphone Academy</span>
+                        <span class="text-xs font-mono text-slate-500">2026</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">Zero-Code App @ vibe coding</h3>
+                    <p class="text-xs text-slate-400">Validates building applications without coding using AI prompt engineering and vibe coding.</p>
+                </a>
+                <a href="https://www.grameenphone.academy/cert/bdd2e3009e45" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-indigo-400">Grameenphone Academy</span>
+                        <span class="text-xs font-mono text-slate-500">2026</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">AI+Superpresentations</h3>
+                    <p class="text-xs text-slate-400">Validates leveraging AI tools to create high-impact, professional, and dynamic slide presentations.</p>
+                </a>
+                <a href="https://www.grameenphone.academy/cert/56d5d29cf955" target="_blank" class="glass-card p-6 rounded-2xl border border-white/5 space-y-3 block hover:border-indigo-500/50 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono text-indigo-400">Grameenphone Academy</span>
+                        <span class="text-xs font-mono text-slate-500">2026</span>
+                    </div>
+                    <h3 class="font-serif font-bold text-white text-lg">AI-Powered Analytics</h3>
+                    <p class="text-xs text-slate-400">Validates leveraging artificial intelligence tools to analyze data and extract actionable business insights.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS SECTION -->
+        <section id="publications" class="py-16 px-6 lg:px-12 max-w-7xl mx-auto w-full border-t border-white/5">
+            <div class="mb-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Selected Works</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Featured Publications</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Publication 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-emerald-400">
+                            <span>Taylor & francis (September 2025)</span>
+                            <span>•</span>
+                            <span class="text-slate-400">DOI: 10.1109/AISEI68628.2026.11572962</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg">A Comparative Analysis of CNN Architectures for Peripheral Blood Cell Classification Against Transfer Learning</h3>
+                        <p class="text-xs text-slate-400"><strong>Ainul Ahsan,</strong> Sadman Sadik Khan, Aminul Haque, Md Rafi Al Karim</p>
+                    </div>
+                    <a href="" 
+                    class="self-start md:self-center px-4 py-2 text-xs font-mono border border-indigo-500/30 rounded-lg text-emerald-300 hover:bg-emerald-500/30 transition">Read Paper <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                </div>
+                <!-- Publication 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-cyan-400">
+                            <span>ResearchGate (April 2026)</span>
+                            <span>•</span>
+                            <span class="text-slate-400">DOI: 10.1109/AISEI68628.2026.11572962</span>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg">Analyzing Regional Variations in Bangla Speech A Voice Classification using MFCCs</h3>
+                        <p class="text-xs text-slate-400"><strong>Ainul Ahsan,</strong> Sadman Sadik Khan, Aminul Haque, Md Rafi Al Karim</p>
+                    </div>
+                    <a href="https://www.researchgate.net/publication/404296702_Analyzing_Regional_Variations_in_Bangla_Speech_A_Voice_Classification_using_MFCCs" 
+                    class="self-start md:self-center px-4 py-2 text-xs font-mono border border-indigo-500/30 rounded-lg text-cyan-300 hover:bg-indigo-500/10 transition">Read Paper <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                </div>
+
+                <!-- Publication 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-xs font-mono text-indigo-400">
+                            <span>Springer Journals (auguest 2026)</span>
+                            <span>•</span>
+                            <span class="text-slate-400"></span>
+                        </div>
+                        <h3 class="font-serif font-bold text-white text-lg">Explainable Hybrid Deep Learning for Accurate Multi-Class Classification of Neuromuscular Diseases</h3>
+                        <p class="text-xs text-slate-400"><strong>Abu Hanzala,</strong>Md Rafi Al Karim, Md Hosne Mobarak, Tanjila Akter</p>
+                    </div>
+                    <a href="" 
+                    class="self-start md:self-center px-4 py-2 text-xs font-mono border border-cyan-500/30 rounded-lg text-indigo-300 hover:bg-cyan-500/10 transition">Read Paper <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACADEMIC IMPACT CHART SECTION -->
+        <section id="impact" class="py-16 px-6 lg:px-12 max-w-7xl mx-auto w-full border-t border-white/5">
+            <div class="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Publication Metrics</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1">Academic Impact Trajectory</h2>
+                </div>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl relative">
+                <canvas id="impactChart" class="w-full max-h-80"></canvas>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-16 px-6 lg:px-12 max-w-7xl mx-auto w-full border-t border-white/5">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <span class="text-xs font-mono uppercase tracking-widest text-indigo-400">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Academic Collaboration & Speaking</h2>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Interested in collaborative research in quantum AI algorithms, neural signal processing, or inviting Dr. Rostova for keynote guest lectures? Send an inquiry message directly.
+                    </p>
+                    <div class="space-y-2 pt-2 text-xs font-mono">
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i class="fa-solid fa-envelope text-indigo-400"></i>
+                            <span>mdrafialkarim13@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i class="fa-solid fa-location-dot text-indigo-400"></i>
+                            <span>Shewrapa, Mirpur, Dhaka-5800, BD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/xbggkrrr" method="POST" class="glass-card p-6 sm:p-8 rounded-2xl border border-white/10 space-y-4" id="contactForm">
+                    <div>
+                        <label class="block text-xs font-mono text-slate-300 mb-1">Full Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white text-sm focus:outline-none focus:border-indigo-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-300 mb-1">Institutional Email</label>
+                        <input type="email" name="email" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white text-sm focus:outline-none focus:border-indigo-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-300 mb-1">Message / Collaboration Proposal</label>
+                        <textarea name="message" rows="4" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900/80 border border-white/10 text-white text-sm focus:outline-none focus:border-indigo-400"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 text-xs font-semibold uppercase tracking-wider text-black bg-gradient-to-r from-indigo-400 to-cyan-300 rounded-lg font-mono hover:brightness-110 transition">
+                        Submit Inquiry
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-8 px-6 lg:px-12 border-t border-white/5 text-center text-xs text-slate-500 font-mono">
+            <p>© 2026 . Md Rafi Al Karim. ML & AI Engineer.</p>
+        </footer>
+
+    </div>
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
